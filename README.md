@@ -1,4 +1,4 @@
 # Python
 
 
-Pequeños proyectos hechos en python
+Pequeños proyectos hechos en python ☠️☠️☠️
