@@ -24,7 +24,7 @@ def change_color():
         app._set_appearance_mode("dark")
         label.configure(text_color="white",fg_color="#202327")
         boton.configure(fg_color="#e8e8e8",text_color="#202020")
-        print("MODO OSURO")
+        print("MODO OSCURO")
 
 
 app=customtkinter.CTk()
@@ -32,7 +32,7 @@ app.title("Reloj Digital")
 app.resizable(False,False)
 label=customtkinter.CTkLabel(app,text="",font=("console",100),text_color="white",anchor="center",)
 
-# switch=customtkinter.CTkSwitch(master=app,text="Activar",command=change_color)
+# switch=customtkinter.CTkSwitch(master=app,text="Cambiar Color",command=change_color)
 
 boton=customtkinter.CTkButton(app,text="Cambiar color",command=change_color,corner_radius=0)
 # switch.pack()
