@@ -24,7 +24,7 @@ def change_color():
         app._set_appearance_mode("dark")
         label.configure(text_color="white",fg_color="#202327")
         boton.configure(fg_color="#e8e8e8",text_color="#202020")
-        print("MODO OSURO")
+        print("MODO OSCURO")
 
 
 app=customtkinter.CTk()
