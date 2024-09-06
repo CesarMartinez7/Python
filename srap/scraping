@@ -4,7 +4,7 @@ import json
 from pyperclip import copy
 
 
-url="https://www.geeksforgeeks.org/python-web-scraping-tutorial/"   
+url=""   
 respuesta=rb.get(url)
 soup=BeautifulSoup(respuesta.content,"html.parser",)
 print(soup.prettify())
