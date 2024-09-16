@@ -3,7 +3,7 @@ import qrcode as qr
 import tkinter as tk
 from PIL import Image,ImageTk
 import os
-import ursina
+
 
 class Interfaz(ctk.CTk):
     def __init__(self,nombre_archivo):
