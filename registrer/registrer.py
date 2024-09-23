@@ -263,5 +263,3 @@ else:
     else:
         print("ELSE DE TRY")
         
-num=10 
-print("es par " if num %2==0 else " no es par")
