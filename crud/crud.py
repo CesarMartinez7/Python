@@ -13,7 +13,7 @@ class Interfaz(ctk.CTk):
         ctk.CTk.__init__(self)
         self.geometry("400x400")
         self.title("CREATE")
-        self.iconbitmap("./crud/image.ico")
+        self.iconbitmap("./crud/Python/crud/image.ico")
         self.resizable(False,True)
         self.tittle = ctk.CTkLabel(self,200,20,text="Bienvenido",font=("Times new roman",30)).pack_configure(pady=30)
         self.emailEntry = ctk.CTkEntry(self,placeholder_text="Email",width=200)
