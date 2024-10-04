@@ -1,0 +1,6 @@
+CREATE TABLE `persona` (
+  `personaId` int NOT NULL AUTO_INCREMENT,
+  `email` varchar(200) DEFAULT NULL,
+  `contraseña` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`personaId`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
