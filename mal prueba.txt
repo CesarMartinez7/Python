@@ -1,0 +1,82 @@
+import customtkinter as ctk
+import mysql.connector
+from tkinter import messagebox
+import sys
+from pyfiglet import Figlet
+
+
+
+print(sys.executable)
+
+
+class Interfaz(ctk.CTk):
+    def __init__(self):
+        ctk.CTk.__init__(self)
+        self.geometry("400x400")
+        self.title("CREATE")
+        self.iconbitmap("C:/Users/APRENDIZ SENA/Desktop/REPO/Python/crud/image.ico")
+        self.resizable(False,True)
+        self.tittle = ctk.CTkLabel(self,200,20,text="Bienvenido",font=("Times new roman",30)).pack_configure(pady=30)
+        self.emailEntry = ctk.CTkEntry(self,placeholder_text="Email",width=200)
+        self.emailEntry.pack(pady=20)
+        self.contraseñaEntry = ctk.CTkEntry(self,placeholder_text="Contraseña",width=200,show=".")
+        self.contraseñaEntry.pack()
+        self.boton = ctk.CTkButton(self,text="Enviar",width=200,command=self.obtener_Datos)
+        self.boton.pack_configure(pady=20)
+        self.buttonQUIT = ctk.CTkButton(master=self,text="Cerrar",fg_color="red",hover_color="#cc2424",command=self.Quit,width=200)
+        self.buttonQUIT.pack_configure(pady=4,padx=30)
+        self.eliminarRegistro = ctk.CTkButton(self,text="Elimina registro",command=self.query)
+        self.eliminarRegistro.pack_configure(pady=4,)
+    
+    
+    def Quit(self):
+        sys.exit()
+    
+    
+    def obtener_Datos(self):
+        if len(self.emailEntry.get()) >= 5 and len(self.contraseñaEntry.get()) >= 5:
+            self.emailClean = self.emailEntry.get()
+            self.contraseñaClean = self.contraseñaEntry.get()
+            print(self.emailClean,self.contraseñaClean)
+            self.query(email=self.emailClean,password=self.contraseñaClean)
+        else:
+            self.error = messagebox.showerror(title="Error",message="Por favor rellene los campos correctamente")
+    
+    
+    def query(self,data,sql = "INSERT INTO PERSONA (email,contraseña) values (%s,%s)",**kwargs):         
+        try:
+            db = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            password="oyasumi",
+            database="crud")
+            ########################################
+            mycursor = db.cursor()
+            datos = kwargs.values()
+            datos = tuple(datos)
+            data = tuple(data)
+            mycursor.execute(sql,data)
+            mycursor.fetchall()
+            db.commit()
+        except Exception as e:
+            messagebox.showinfo(message=f"Lo sentimos el error fue {e}")
+        else:
+            print("Insertado con exito")
+            f = Figlet(font='slant')
+            print(f.renderText('Procesado con exito'))   
+         
+        
+    
+    
+
+    def delete(self):
+        sql = "delete * from persona WHERE personaId=%s"
+        self.query(sql=sql,data=1)
+        
+                    
+    
+    
+inte = Interfaz()
+
+inte.mainloop()
+
