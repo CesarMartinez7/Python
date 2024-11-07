@@ -1,5 +1,5 @@
-## Python
-#### Colección de Proyectos en Python
+# Python
+
 
 Este repositorio contiene varios proyectos pequeños en Python que exploran distintas aplicaciones y funcionalidades. Cada proyecto es independiente y cubre un tema específico, ideal para quienes desean aprender o practicar programación en Python.
 
